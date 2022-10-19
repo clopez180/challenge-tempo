@@ -1,14 +1,10 @@
 package com.challenge.tenpo.config;
 
-import com.challenge.tenpo.config.filter.TokenInspectorFilter;
+import com.challenge.tenpo.filter.TokenInspectorFilter;
 import com.challenge.tenpo.service.ISessionSecurityService;
 import com.challenge.tenpo.service.impl.JwtService;
 import com.challenge.tenpo.service.impl.SessionService;
 import com.challenge.tenpo.service.impl.UserCredentialService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.core.env.Environment;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.CorsEndpointProperties;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties;

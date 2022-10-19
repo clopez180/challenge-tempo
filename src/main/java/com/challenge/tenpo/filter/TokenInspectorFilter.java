@@ -1,4 +1,4 @@
-package com.challenge.tenpo.config.filter;
+package com.challenge.tenpo.filter;
 
 import com.challenge.tenpo.service.ISessionSecurityService;
 import com.challenge.tenpo.service.impl.JwtService;
