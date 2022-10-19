@@ -1,0 +1,73 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    format-sql: false
+    jdbc:
+      time_zone: UTC
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  sql:
+    init:
+      platform: postgres
+  datasource:
+    url: 'jdbc:postgresql://dbpostgresql:5432/postgres'
+    username: postgres
+    password: password
+  main:
+    banner-mode: 'off'
+    allow-bean-definition-overriding: true
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  logging:
+    level:
+      org:
+        springframework: INFO
+# jwt config
+jwt:
+  sign:
+    key: AXP2nB3T06SeRKJuXi7a0P8lP1ULXdMWsrX6fM/5kPZzZXOKIRJzpCTe+efSf44cEfPsTCULebAlEFLjx8nu6Y3tlTzipqNZaVvHyAJvt3F4VhoHekW6SKa/1u6UhAAzXjO/fTe6UY4gDZoZjnnMex7Xrj5UsK4x7rQONyJacxVSq8xqW8pIFJl71eXuXnBGYdpw1h3rQxkZNo62le4dLnV6/jAXHf3tPOIUFg==
+  ttl: 60
+
+externo:
+  rest:
+    client:
+      baseUrl: 'https://csrng.net/csrng/csrng.php?min=0&max=100'
+resilience4j:
+  circuitbreaker:
+    instances:
+      percentageService:
+        eventConsumerBufferSize: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        failureRateThreshold: 30
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        waitDurationInOpenState: 5s
+        slidingWindowType: COUNT_BASED
+  retry:
+    instances:
+      percentageService:
+        maxAttempts: 3
+        waitDuration: 15s
+  ratelimiter:
+    instances:
+      percentageService:
+        limitForPeriod: 1
+        limitRefreshPeriod: 1800s
+        timeoutDuration: 0

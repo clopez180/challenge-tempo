@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "69c7ff1a-7e65-48bb-be7e-6210ea6a6da8",
+		"name": "tenpo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/auth/sign_in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"12345678\",\r\n    \"confirmPassword\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/sign_in",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/auth/logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjY2MDQ5MTk3LCJleHAiOjE2NjYwNTI3OTd9.bABaa_zkiKtMvSx2Jrkm2t9QvnUlVrEDcCI0Zsj-S7jfNAcCwqYrOHEr65k2QzEU7Kuf49ZqdrH_q5OLM3qhUA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/challenge/add?number_first=1&number_second=2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjY2MDU2MTY4LCJleHAiOjE2NjYwNTk3Njh9.c6VcgVjwMa4rk8Pfmn3k_kdMB3_W9AYPo4Jx_39sDApTLbT0nfSlz4SgUOzvsBQPhZ_SgWjnoan0hIaJN4gBFA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/challenge/add?number_first=1&number_second=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"challenge",
+						"add"
+					],
+					"query": [
+						{
+							"key": "number_first",
+							"value": "1"
+						},
+						{
+							"key": "number_second",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/challenge/history",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjY2MjEyMDUzLCJleHAiOjE2NjYyMTU2NTN9.1r8RmjG-4f04JD0wRu2xBaRD5fQnFPkaVUDTeiI4PIoj2XC-N4GKtZURVEbI6DkOG25Yb0jgwuKpAT1TbrucHQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/challenge/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"challenge",
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
